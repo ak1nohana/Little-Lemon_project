@@ -1,10 +1,15 @@
 import './App.css';
+import Navigation from './components/Navigation';
+import Footer from './components/Footer';
+import Routing from './components/Routing';
 
 function App() {
   return (
-    <div className="App">
-
-    </div>
+    <>
+      <Navigation/>
+      <Routing />
+      <Footer />
+    </>
   );
 }
 
