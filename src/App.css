@@ -401,6 +401,8 @@ select, input {
 #reserve {
   background-color: #F4CE14;
   color: #000;
+  font-weight: 800;
+  font-size: 20px;
 }
 
 #reserve:hover {
@@ -410,6 +412,11 @@ select, input {
 #reserve:active {
   background-color:#495E57;
   color: #fff;
+}
+
+input:required:invalid,
+input:focus:invalid {
+  stroke: #D43C3C;
 }
 
 /*--------MISC-----*/
@@ -439,4 +446,8 @@ select, input {
   height: 40vh;
   text-align: center;
   padding: 15vh;
+}
+
+sup {
+  color: #D43C3C;
 }

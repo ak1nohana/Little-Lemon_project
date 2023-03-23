@@ -14,6 +14,7 @@ export default function ReservationForm(props) {
   const [expDate, setExpDate] = useState("");
   const [cvv, setCvv] = useState("");
 
+
     return (
         <>
             <div className="container">
@@ -31,14 +32,14 @@ export default function ReservationForm(props) {
             </article>
             </section>
             </div>
-            <form>
+            <form action="/success">
                 <div className="res-form">
                 <div className="step">
                     <h3>Step 1. Contact information</h3>
-                    <p>Fill out this form so we could contact you if needed. All the required information is marked with a * symbol.</p>
+                    <p>Fill out this form so we could contact you if needed. All the required information is marked with a <sup>*</sup> symbol.</p>
                     <div className="step1">
                         <div className="field">
-                            <label htmlFor="fName">First Name</label> <br></br>
+                            <label htmlFor="fName">First Name<sup>*</sup></label> <br></br>
                             <input
                             type="text"
                             id="fName"
@@ -51,7 +52,7 @@ export default function ReservationForm(props) {
                             ></input>
                         </div>
                         <div className="field">
-                            <label htmlFor="LName">Last Name</label> <br></br>
+                            <label htmlFor="LName">Last Name<sup>*</sup></label> <br></br>
                             <input
                             type="text"
                             id="lName"
@@ -64,7 +65,7 @@ export default function ReservationForm(props) {
                             ></input>
                         </div>
                         <div className="field">
-                            <label htmlFor="email">E-mail</label> <br></br>
+                            <label htmlFor="email">E-mail<sup>*</sup></label> <br></br>
                             <input
                             type="email"
                             id="email"
@@ -83,7 +84,6 @@ export default function ReservationForm(props) {
                             id="phonenum"
                             placeholder="(xxx)-xxx-xxxx"
                             value={tel}
-                            required
                             minLength={10}
                             maxLength={25}
                             onChange={(e) => setTel(e.target.value)}
@@ -96,21 +96,20 @@ export default function ReservationForm(props) {
                     <p>Specify the details of your reservation in this part of the form.</p>
                     <div className="step2">
                         <div className="field">
-                            <label htmlFor="occasion">Occasion</label> <br></br>
+                            <label htmlFor="occasion">Occasion<sup>*</sup></label> <br></br>
                             <select
                             id="occasion"
                             value={occasion}
                             onChange={(e) => setOccasion(e.target.value)}
                             >
-                            <option>None</option>
+                            <option>Other</option>
                             <option>Birthday</option>
                             <option>Anniversary</option>
                             <option>Engagement</option>
-                            <option>Other</option>
                             </select>
                         </div>
                         <div className="field">
-                            <label htmlFor="people">Number of People</label> <br></br>
+                            <label htmlFor="people">Number of People<sup>*</sup></label> <br></br>
                             <input
                             type="number"
                             id="people"
@@ -123,7 +122,7 @@ export default function ReservationForm(props) {
                             ></input>
                         </div>
                         <div className="field">
-                            <label htmlFor="date">Select Date</label> <br></br>
+                            <label htmlFor="date">Select Date<sup>*</sup></label> <br></br>
                             <input
                             type="date"
                             id="date"
@@ -134,7 +133,7 @@ export default function ReservationForm(props) {
                         </div>
 
                         <div className="field">
-                            <label htmlFor="time">Select Time</label> <br></br>
+                            <label htmlFor="time">Select Time<sup>*</sup></label> <br></br>
                             <select 
                             type="time"
                             id="time"
@@ -160,7 +159,7 @@ export default function ReservationForm(props) {
                     <p>The reservation itself is free, but we will charge you a "no show" fee if you do not arrive or cancel in advance.</p>
                     <div className="step3">
                         <div className="field">
-                            <label htmlFor="cardnum">Card Number</label><br></br>
+                            <label htmlFor="cardnum">Card Number<sup>*</sup></label><br></br>
                             <input
                             type="number"
                             id="cardnum"
@@ -173,7 +172,7 @@ export default function ReservationForm(props) {
                             />
                         </div>
                         <div className="field">
-                            <label htmlFor="cardname">Name</label><br></br>
+                            <label htmlFor="cardname">Name<sup>*</sup></label><br></br>
                             <input
                             type="text"
                             id="cardName"
@@ -184,7 +183,7 @@ export default function ReservationForm(props) {
                             />
                         </div>
                         <div className="field">
-                            <label htmlFor="expDate">Expiry date</label><br></br>
+                            <label htmlFor="expDate">Expiry date<sup>*</sup></label><br></br>
                             <input
                             type="text"
                             id="expDate"
@@ -195,7 +194,7 @@ export default function ReservationForm(props) {
                             />
                         </div>
                         <div className="field">
-                            <label htmlFor="cvv">CVV</label><br></br>
+                            <label htmlFor="cvv">CVV<sup>*</sup></label><br></br>
                             <input
                             type="password"
                             id="cvv"
@@ -206,9 +205,9 @@ export default function ReservationForm(props) {
                             />
                         </div>
                     </div>
-                    <Link to="/success">
-                        <button id="reserve">Reserve a table</button>
-                    </Link>
+                    {/* <Link to="/success"> */}
+                        <input type="submit" id="reserve" value="Reserve a table"/>
+                    {/* </Link> */}
                 </div>
                 </div>
             </form>
